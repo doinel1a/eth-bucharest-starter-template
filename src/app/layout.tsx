@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import '../styles/globals.scss';
+import '@coinbase/onchainkit/styles.css';
 
 import React from 'react';
 
@@ -10,7 +11,6 @@ import { Analytics } from '@vercel/analytics/react';
 
 import Footer from '@/components/footer';
 import GithubCorner from '@/components/github-corner';
-import WithSupportedChains from '@/components/hoc/with-supported-chains';
 import Navbar from '@/components/navbar';
 import RootProvider from '@/components/providers/root';
 import { Toaster } from '@/components/ui/sonner';
@@ -32,18 +32,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' suppressHydrationWarning>
       <body>
         <RootProvider>
-          <WithSupportedChains>
-            <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
-              <Navbar />
-              {children}
-              <Footer />
+          <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
+            <Navbar />
+            {children}
+            <Footer />
 
-              <GithubCorner
-                title='Get started on GitHub'
-                url='https://github.com/doinel1a/next-ts-web3-evm'
-              />
-            </div>
-          </WithSupportedChains>
+            <GithubCorner
+              title='Get started on GitHub'
+              url='https://github.com/doinel1a/next-ts-web3-evm'
+            />
+          </div>
 
           <Analytics />
           <Toaster richColors closeButton />

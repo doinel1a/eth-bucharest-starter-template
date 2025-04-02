@@ -11,7 +11,7 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENT_VAR: z.string(),
-    NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID: z.string().length(32)
+    NEXT_PUBLIC_ONCHAINKIT_API_KEY: z.string().length(32)
   },
   /**
    * Specify your server-side environment variables schema here.
@@ -28,7 +28,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     // client
-    NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
+    NEXT_PUBLIC_ONCHAINKIT_API_KEY: process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY,
     // server
     NODE_ENV: process.env.NODE_ENV
   },
